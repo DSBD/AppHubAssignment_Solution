@@ -75,8 +75,53 @@ def DecimalToBinary(dNum):
     return(bin(dNum));
 
 def UnitConverter():
-    #TODO Make Unit Converter
-    pass
+    print("Unit Conversion Program \n1) KG - LBS \n2) LBS - KG \n3) CAD - USD \n4) USD - CAD \n5) Miles - KM \n6) KM - Miles \n7) Meters - Ft \n8) Ft - Meters \n9) Celcius - Fahrenhiet \n10) Fahrenhiet - Celcius");
+    choice = int(input("\nPlease Choose a Conversion: "))
+
+    if(choice == 1):
+        value = float(input("Please Enter the Value in KG: "));
+        converted = value * 2.205;
+        output = "The Value of " + str(value) + " kg is " + str(round(converted, 2)) + "lbs."
+    elif(choice == 2):
+        value = float(input("Please Enter the Value in LBS: "));
+        converted = value / 2.205;
+        output = "The Value of " + str(value) + " lbs is " + str(round(converted, 2)) + "kg."
+    elif(choice == 3):
+        value = float(input("Please Enter the Value in CAD: "));
+        converted = value * 0.76;
+        output = "The Value of " + str(value) + " CAD is " + str(round(converted, 2)) + "USD."
+    elif(choice == 4):
+        value = float(input("Please Enter the Value in USD: "));
+        converted = value * 1.32;
+        output = "The Value of " + str(value) + " USD is " + str(round(converted, 2)) + "CAD."
+    elif(choice == 5):
+        value = float(input("Please Enter the Value in Miles: "));
+        converted = value * 1.609;
+        output = "The Value of " + str(value) + " miles is " + str(round(converted, 2)) + "km."
+    elif(choice == 6):
+        value = float(input("Please Enter the Value in KM: "));
+        converted = value / 1.609;
+        output = "The Value of " + str(value) + " km is " + str(round(converted, 2)) + "miles."
+    elif(choice == 7):
+        value = float(input("Please Enter the Value in Meters: "));
+        converted = value * 3.281;
+        output = "The Value of " + str(value) + " m is " + str(round(converted, 2)) + "ft."
+    elif(choice == 8):
+        value = float(input("Please Enter the Value in FT: "));
+        converted = value / 2.381;
+        output = "The Value of " + str(value) + " ft is " + str(round(converted, 2)) + "m."
+    elif(choice == 9):
+        value = float(input("Please Enter the Value in Celcius: "));
+        converted = (value * (9 / 5) + 32);
+        output = "The Value of " + str(value) + " °C is " + str(round(converted, 2)) + "°F."
+    elif(choice == 10):
+        value = float(input("Please Enter the Value in Fahrenheit: "));
+        converted = (value - 32) * (5 / 9);
+        output = "The Value of " + str(value) + " °F is " + str(round(converted, 2)) + "°C."
+    else:
+        output = "InValid Choice";
+
+    return output;
 
 def TaxCalulator(amount, taxRate):
     return round(amount * (1 + (taxRate / 100)), 2);
@@ -99,6 +144,6 @@ def CoinFlip():
 
 def main():
     #TODO Create Main Program
-    pass;
+    print(UnitConverter());
 
 main();
