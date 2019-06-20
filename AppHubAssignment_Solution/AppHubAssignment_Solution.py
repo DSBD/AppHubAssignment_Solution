@@ -54,8 +54,19 @@ def MortgageCalculator(loanValue, interestRate, loanLength):
 
 
 def ChangeReturn(cost, tender):
-    #TODO Make CHange Return Program
-    pass
+    changeNeeded = tender - cost;
+
+    change = {"100" : 0, "50" : 0, "20" : 0, "10" : 0, "5" : 0, "2" : 0, "1" : 0, "0.25" : 0, "0.1" : 0, "0.05" : 0};
+
+    for value, quantity in change.items():
+        while True:
+            if(float(value) <= changeNeeded):
+                change[value] += 1;
+                changeNeeded -= float(value);
+            else:
+                break;
+
+    return change;
 
 def BinaryToDecimal(bNum):
     return int(bNum, 2);
@@ -90,6 +101,6 @@ def main():
     #print(BinaryToDecimal("1010010"));
     #print(DecimalToBinary(82)[2::]);
 
-    print(MortgageCalculator(100000, 0.5, 15));
+    pass;
 
 main();
