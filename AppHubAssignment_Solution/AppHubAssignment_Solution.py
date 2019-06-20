@@ -37,7 +37,7 @@ def UnitConverter():
     pass
 
 def TaxCalulator(amount, taxRate):
-    pass
+    return round(amount * (1 + (taxRate / 100)), 2);
 
 def Factorial(number):
     pass
