@@ -10,7 +10,12 @@ def PrimeFactorization(number):
     pass
 
 def NextPrime(number):
-    pass
+    nPrime = number + 1;
+
+    while(IsPrime(nPrime) == False):
+        nPrime += 1;
+
+    return nPrime;
 
 def IsPrime(number):
     i = number - 1;
