@@ -7,7 +7,15 @@ def FibonacciGenerator(terms):
     pass
 
 def PrimeFactorization(number):
-    pass
+    factList = [];
+    curFactor = 1;
+
+    while(curFactor < number):
+        if(number % curFactor == 0 and IsPrime(curFactor)):
+            factList.append(curFactor);
+        curFactor += 1;
+
+    return factList;
 
 def NextPrime(number):
     nPrime = number + 1;
