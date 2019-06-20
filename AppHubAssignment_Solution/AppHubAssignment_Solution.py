@@ -13,7 +13,13 @@ def NextPrime(number):
     pass
 
 def IsPrime(number):
-    pass
+    i = number - 1;
+
+    while(i > 1):
+        if(number % i == 0):
+            return False;
+        i -= 1;
+    return True
 
 def MortgageCalculator(loanValue, loanLength, interestRate):
     pass
@@ -44,7 +50,7 @@ def CoinFlip():
         return "Tails"
 
 def main():
-    pass
+    pass;
 
 if __name__ == "__main__": #The following two lines of code run the main method apon program start as python does no do this by default
     main()
