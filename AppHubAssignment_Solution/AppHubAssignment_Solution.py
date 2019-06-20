@@ -98,9 +98,7 @@ def CoinFlip():
         return "Tails"
 
 def main():
-    #print(BinaryToDecimal("1010010"));
-    #print(DecimalToBinary(82)[2::]);
-
+    #TODO Create Main Program
     pass;
 
 main();
