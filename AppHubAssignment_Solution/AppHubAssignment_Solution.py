@@ -41,10 +41,10 @@ def ChangeReturn(cost, tender):
     pass
 
 def BinaryToDecimal(bNum):
-    pass
+    return int(bNum, 2);
 
 def DecimalToBinary(dNum):
-    pass
+    return(bin(dNum));
 
 def UnitConverter():
     pass
@@ -63,7 +63,9 @@ def CoinFlip():
         return "Tails"
 
 def main():
+    #print(BinaryToDecimal("1010010"));
+    #print(DecimalToBinary(82)[2::]);
+
     pass;
 
-if __name__ == "__main__": #The following two lines of code run the main method apon program start as python does no do this by default
-    main()
+main();
