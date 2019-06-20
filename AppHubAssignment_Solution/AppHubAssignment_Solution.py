@@ -44,9 +44,14 @@ def IsPrime(number):
         i -= 1;
     return True
 
-def MortgageCalculator(loanValue, loanLength, interestRate):
-    #TODO Make Mortgage Calculator
-    pass
+def MortgageCalculator(loanValue, interestRate, loanLength):
+    mRate = interestRate / 100;
+    months = loanLength * 12;
+
+    payment = loanValue * ((mRate * (1 + mRate) ** months) / (((1 + mRate) ** months) - 1));
+
+    return round(payment, 2);
+
 
 def ChangeReturn(cost, tender):
     #TODO Make CHange Return Program
@@ -85,6 +90,6 @@ def main():
     #print(BinaryToDecimal("1010010"));
     #print(DecimalToBinary(82)[2::]);
 
-    pass;
+    print(MortgageCalculator(100000, 0.5, 15));
 
 main();
