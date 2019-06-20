@@ -144,6 +144,5 @@ def CoinFlip():
 
 def main():
     #TODO Create Main Program
-    print(UnitConverter());
-
+    pass;
 main();
