@@ -123,7 +123,7 @@ def UnitConverter():
 
     return output;
 
-def TaxCalulator(amount, taxRate):
+def TaxCalculator(amount, taxRate):
     return round(amount * (1 + (taxRate / 100)), 2);
 
 def Factorial(number):
@@ -189,9 +189,74 @@ def main():
 
             print("The Next Prime Number after", number, "is", NextPrime(number));
 
-        else:
+        elif(selectedApp == "D"):
+            number = int(input("\nWelcome to Prime Checker. Please the Number to Check: "));
+
+            if(IsPrime(number)):
+                print("The Number", number, "is Prime");
+            else:
+                print("The Number", number, "is not Prime");
+        
+        elif(selectedApp == "E"):
+            principle = float(input("\nWelcome to Mortgage Calculator. Please the Initial Loan Value: "));
+            rate = float(input("Please Enter the Interest Rate: "));
+            years = int(input("Please Enter the Length of the Loan: "))
+
+            payment = MortgageCalculator(principle, rate, years);
+
+            print("\nThe monthly loan payment is $" + str(payment));
+
+        elif(selectedApp == "F"):
+            cost = float(input("\nWelcome to Change Return Calculator. Please Enter the Cost of the Item: "));
+            tender = float(input("Please Enter the Tender Amount: "))
+
+            change = ChangeReturn(cost, tender)
+
+            print("$100:", change["100"]);
+            print("$50 :", change["50"]);
+            print("$20 :", change["20"]);
+            print("$10 :", change["10"]);
+            print("$5  :", change["5"]);
+            print("$2  :", change["2"]);
+            print("$1  :", change["1"]);
+            print("25₵ :", change["0.25"]);
+            print("10₵ :", change["0.1"]);
+            print("5₵  :", change["0.05"]);
+        
+        elif(selectedApp == "G"):
+            bNum = input("\nWelcome to Binary to Decimal Converter. Please Enter a Binary Number: ");
+            dNum = BinaryToDecimal(bNum);
+            print("The Binary Number", bNum, "is", dNum);
+
+        elif(selectedApp == "H"):
+            dNum = int(input("\nWelcome to Decimal to Binary Converter. Please Enter a Number: "));
+            bNum = DecimalToBinary(dNum);
+            print("The Number", dNum, "is", bNum[2::]);
+
+        elif(selectedApp == "I"):
+            print(UnitConverter());
+        
+        elif(selectedApp == "J"):
+            number = float(input("\nWelcome to Tax Calculator. Please Enter a Number: "));
+            taxRate = int(input("Please Enter the Tax Rate: "))
+
+            total = TaxCalculator(number, taxRate);
+
+            print("The Total is", total);
+
+        elif(selectedApp == "K"):
+            number = int(input("\nWelcome to Factrial Calculator. Please Enter a Number: "));
+            
+            print("The Factorial of", number , "is", Factorial(number));
+        
+        elif(selectedApp == "L"):
+            print("\nWelcome to Coin Flip Simulator. The Coin Says:", CoinFlip());
+
+        elif(selectedApp == "Z"):
             loopControl = False;
 
-    print("\nThank You for Using AppHub, Have a Nice Day!");
+            #print("L - Coin Flip Simulation");
+
+    print("\nThank You for Using AppHub, Have a Nice Day!\n");
 
 main();
