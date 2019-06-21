@@ -255,8 +255,6 @@ def main():
         elif(selectedApp == "Z"):
             loopControl = False;
 
-            #print("L - Coin Flip Simulation");
-
     print("\nThank You for Using AppHub, Have a Nice Day!\n");
 
 main();
