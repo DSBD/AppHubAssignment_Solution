@@ -76,48 +76,48 @@ def DecimalToBinary(dNum):
 
 def UnitConverter():
     print("Unit Conversion Program \n1) KG - LBS \n2) LBS - KG \n3) CAD - USD \n4) USD - CAD \n5) Miles - KM \n6) KM - Miles \n7) Meters - Ft \n8) Ft - Meters \n9) Celcius - Fahrenhiet \n10) Fahrenhiet - Celcius");
-    choice = int(input("\nPlease Choose a Conversion: "))
+    choice = int(input("\nPlease Choose a Conversion: "));
 
     if(choice == 1):
         value = float(input("Please Enter the Value in KG: "));
         converted = value * 2.205;
-        output = "The Value of " + str(value) + " kg is " + str(round(converted, 2)) + "lbs."
+        output = "The Value of " + str(value) + " kg is " + str(round(converted, 2)) + "lbs.";
     elif(choice == 2):
         value = float(input("Please Enter the Value in LBS: "));
         converted = value / 2.205;
-        output = "The Value of " + str(value) + " lbs is " + str(round(converted, 2)) + "kg."
+        output = "The Value of " + str(value) + " lbs is " + str(round(converted, 2)) + "kg.";
     elif(choice == 3):
         value = float(input("Please Enter the Value in CAD: "));
         converted = value * 0.76;
-        output = "The Value of " + str(value) + " CAD is " + str(round(converted, 2)) + "USD."
+        output = "The Value of " + str(value) + " CAD is " + str(round(converted, 2)) + "USD.";
     elif(choice == 4):
         value = float(input("Please Enter the Value in USD: "));
         converted = value * 1.32;
-        output = "The Value of " + str(value) + " USD is " + str(round(converted, 2)) + "CAD."
+        output = "The Value of " + str(value) + " USD is " + str(round(converted, 2)) + "CAD.";
     elif(choice == 5):
         value = float(input("Please Enter the Value in Miles: "));
         converted = value * 1.609;
-        output = "The Value of " + str(value) + " miles is " + str(round(converted, 2)) + "km."
+        output = "The Value of " + str(value) + " miles is " + str(round(converted, 2)) + "km.";
     elif(choice == 6):
         value = float(input("Please Enter the Value in KM: "));
         converted = value / 1.609;
-        output = "The Value of " + str(value) + " km is " + str(round(converted, 2)) + "miles."
+        output = "The Value of " + str(value) + " km is " + str(round(converted, 2)) + "miles.";
     elif(choice == 7):
         value = float(input("Please Enter the Value in Meters: "));
         converted = value * 3.281;
-        output = "The Value of " + str(value) + " m is " + str(round(converted, 2)) + "ft."
+        output = "The Value of " + str(value) + " m is " + str(round(converted, 2)) + "ft.";
     elif(choice == 8):
         value = float(input("Please Enter the Value in FT: "));
         converted = value / 2.381;
-        output = "The Value of " + str(value) + " ft is " + str(round(converted, 2)) + "m."
+        output = "The Value of " + str(value) + " ft is " + str(round(converted, 2)) + "m.";
     elif(choice == 9):
         value = float(input("Please Enter the Value in Celcius: "));
         converted = (value * (9 / 5) + 32);
-        output = "The Value of " + str(value) + " °C is " + str(round(converted, 2)) + "°F."
+        output = "The Value of " + str(value) + " °C is " + str(round(converted, 2)) + "°F.";
     elif(choice == 10):
         value = float(input("Please Enter the Value in Fahrenheit: "));
         converted = (value - 32) * (5 / 9);
-        output = "The Value of " + str(value) + " °F is " + str(round(converted, 2)) + "°C."
+        output = "The Value of " + str(value) + " °F is " + str(round(converted, 2)) + "°C.";
     else:
         output = "InValid Choice";
 
@@ -138,11 +138,60 @@ def Factorial(number):
 def CoinFlip():
     result = random.randint(0, 1);
     if(result == 0):
-        return "Heads"
+        return "Heads";
     elif(result == 1):
-        return "Tails"
+        return "Tails";
+
+def PrintMenu():
+    print("\nA - Fibonacci Generator");
+    print("B - Prime Factorization");
+    print("C - Next Prime Number");
+    print("D - Prime Checker");
+    print("E - Mortgage Calculator");
+    print("F - Change Return Program");
+    print("G - Binary to Decimal Converter");
+    print("H - Decimal to Binary Converter");
+    print("I - Unit Converter");
+    print("J - Tax Calulator");
+    print("K - Factorial Calculator");
+    print("L - Coin Flip Simulation");
+    print("Z - Exit");
 
 def main():
     #TODO Create Main Program
-    pass;
+    loopControl = True;
+
+    print("Welcome to the App Dashboard, Please Select an App to Continue\n");
+
+    while(loopControl):
+        PrintMenu();
+        selectedApp = (input("\nPlease Enter a Choice: ")).upper();
+        if(selectedApp == "A"):
+            terms = int(input("\nWelcome to Fibonacci. Please Enter the Number of Terms you would like: "));
+            termList = FibonacciGenerator(terms);
+
+            print("The Terms Are: ", end="");
+            for cTerm in termList:
+                print(cTerm, end=" ")
+            print();
+        
+        elif(selectedApp == "B"):
+            number = int(input("\nWelcome to Prime Factorization. Please Enter the Number you would like to factor: "));
+            factList = PrimeFactorization(number);
+
+            print("The Factors Are: ", end="");
+            for cTerm in factList:
+                print(cTerm, end=" ")
+            print();
+        
+        elif(selectedApp == "C"):
+            number = int(input("\nWelcome to Next Prime. Please the Number to Start at: "));
+
+            print("The Next Prime Number after", number, "is", NextPrime(number));
+
+        else:
+            loopControl = False;
+
+    print("\nThank You for Using AppHub, Have a Nice Day!");
+
 main();
