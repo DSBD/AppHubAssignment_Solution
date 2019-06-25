@@ -45,7 +45,7 @@ def IsPrime(number):
     return True
 
 def MortgageCalculator(loanValue, interestRate, loanLength):
-    mRate = interestRate / 100;
+    mRate = interestRate / 100 / 12;
     months = loanLength * 12;
 
     payment = loanValue * ((mRate * (1 + mRate) ** months) / (((1 + mRate) ** months) - 1));
